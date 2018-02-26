@@ -4,6 +4,8 @@ import jsonwebtoken from 'jsonwebtoken';
 import cors from 'cors';
 import Config from './config';
 import { authenticate, authError } from './middleware';
+import fs from 'fs';
+import path from 'path'
 
 const { port, secretKey, expiredAfter } = Config;
 const app = express();
@@ -54,6 +56,19 @@ app.post('/api/secret/test', (req, res) => {
 		status: 200,
 		message: 'succcesful',
 	});
+});
+
+// set path for static
+const walletBuild = path.join(__dirname, 'public');
+const indexPagePath = path.join(__dirname, 'public/wallet/index.html');
+const indexPage = fs.readFileSync(indexPagePath);
+
+// set static route
+app.use(express.static(walletBuild));
+
+// send file for refresh
+app.use(async (ctx) => {
+  ctx.body = indexPage.toString();
 });
 
 app.listen(port, () => {

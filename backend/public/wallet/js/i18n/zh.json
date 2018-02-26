@@ -1,0 +1,68 @@
+{
+	"@metadata": {
+		"authors": [
+			"JinHyung Lee"
+		],
+		"last-updated": "2017-02-8",
+		"locale": "zh"
+	},
+	"title": "SmartVoucher 钱包",
+	"usage-step": "为了参加我们的ICO请完成这三个步骤的过程。<br><span><b class=\"clr4\">步骤 1:</b> 设置您的WorldBit钱包（或导入您的钱包字符串）。</span><br><span><b class=\"clr4\">步骤 2:</b> 记下并下载您的12字键。<br></span><span><b class=\"clr4\">步骤 3:</b> 购买代币。</span>",
+    "enter_name": "请输入用户名",
+    "enter_email": "请输入邮箱",
+    "create_password": "创建密码",
+    "confirm_password": "确认密码",
+    "password_desc": "密码仅在钱包中购买代币时使用。我们没有保管您的钥匙，请保存好。您下载文件的钱包字符串是唯一的接入到该系统，所以不要破坏这个文件和备份。建议桌面使用。",
+    "agree_tos": "我同意<a href=\"https://wallet.worldbit.com/terms.htm\" target=\"_blank\">服务条款</a>",
+    "continue": "继续",
+    "import_key": "导入钱包",
+
+    "mnemonic_phase_desc": "用笔和纸把这12个单词写下来。请不要复制粘贴你的密码保存在您的手机上。如果你不能把它写在纸上，并存放在<b class=\"clr4\">某处安全</b>，请等待创建钱包，直到你可以这样做。<b class=\"clr4\">如果不遵循这些指示，你就有可能失去所有资金。我们不能恢复它。</b>",
+    "understand" :"明白",
+    "download_keys" : "下载钥匙",
+
+    "wallet": "ICO 钱包",
+    "export_keys": "导出钥匙",
+    "EXIT": "退出",
+    "refresh" : "刷新",
+    "deposit_desc": "0.5 ETH 最低量是用于ShapeShift换代币。您可以购买任何量WBT代币。",
+
+    "send_tokens": "发送代币",
+    "fill_kyc": "为了使用发送功能请填写KYC信息",
+    "fill_kyc_desc": "没有必要用发送功能。ICO期间不能发送WBT代币。",
+
+    "your_wallet_address": "钱包地址",
+
+    "sell_tokens": "卖代币",
+    "sell_tokens_desc": "不能使用ICO期间",
+
+    "buy_tokens": "购买WorldBit代币",
+    "choose_amount": "选择想买的金额",
+    "equivalent_fund": "相当金额",
+    "buy_now": "购买",
+    "buy_desc1": "这可能需要几分钟你的ETH出现在钱包，请耐心等待。 ",
+    "buy_desc2": "记住留一点ETH！这些ETH用于GAS",
+
+    "market_rates": "市值",
+    "market_rates_desc": "ICO后才能用",
+
+    "eth_market_rates": "ETH 市值",
+    "price_usd": "价格 USD",
+    "price_btc": "价格 BTC",
+
+    "import_wallet": "导入钱包",
+    "mnemonic_phrase_here": "钱包字符串",
+    "mnemonic_phrase_invalid": "钱包字符串无效",
+    "ok": "确认",
+    "cancel": "取消",
+
+    "please_wait": "请稍等...",
+    "importing_wallet": "导入钱包...",
+    "creating_wallet": "创建钱包...",
+    "topup_balance": "请充值",
+
+    "are_you_sure": "确定？",
+    "buy_token_confirm_msg": "您想花 $1 ETH 购买WorldBit代币?",
+    "yes_buy_it": "是的",
+    "enter_password": "输入密码"
+}

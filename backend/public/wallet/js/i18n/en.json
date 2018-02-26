@@ -1,0 +1,68 @@
+{
+	"@metadata": {
+		"authors": [
+			"JinHyung Lee"
+		],
+		"last-updated": "2017-02-8",
+		"locale": "en"
+	},
+	"title": "SmartVoucher Wallet",
+	"usage-step": "In order to participate in our SMARTVOUCHER please complete this three-step process. <span><b class=\"clr4\">STEP 1:</b> Set up your SmartVoucher Wallet below (or import your wallet string). </span><span><b class=\"clr4\">STEP 2:</b> Write down AND download your 12-word key. </span><span><b class=\"clr4\">STEP 3:</b> Contribute ETH in order to have your tokens appear in your SmartVoucher Wallet. </span>",
+    "enter_name": "Enter Name",
+    "enter_email": "Enter Email Address",
+    "create_password": "Create Password",
+    "confirm_password": "Confirm Password",
+    "password_desc": "The password is only used when you buy tokens in the wallet. We do not keep your keys, please save them. The Wallet String in the textfile you are downloading is your only access back into this sytem, so do not destroy this file, and back it up. Desktop use is recommened.",
+    "agree_tos": "I agree to the <a href=\"https://wallet.SmartVoucher.com/terms.htm\" target=\"_blank\">Terms of Sale</a> for SmartVoucher tokens.",
+    "continue": "Continue",
+    "import_key": "Import Key",
+
+    "mnemonic_phase_desc": "Write down these 12 words using pen and paper. Please do not just copy and paste your passphrase and store it on your phone. If you cannot write it down on paper and <b class=\"clr4\">store it somewhere safe</b>, please wait to create your wallet until you can do so. <b class=\"clr4\">WITHOUT FOLLOWING THESE INSTRUCTIONS YOU RISK LOSING ALL FUNDS. WE CANNOT RESTORE THEM.</b>",
+    "understand" :"I understand",
+    "download_keys" : "DOWNLOAD KEYS",
+
+    "wallet": "SMARTVOUCHER WALLET",
+    "export_keys": "EXPORT KEYS",
+    "EXIT": "EXIT",
+    "refresh" : "Refresh",
+    "deposit_desc": "0.5 ETH minimum is <strong>only</strong> for using ShapeShift to convert tokens to ETH. You may send any amount of ETH to this wallet address to purchase any amount SVT!",
+
+    "send_tokens": "SEND TOKENS",
+    "fill_kyc": "Please fill out KYC info to enable Send button.",
+    "fill_kyc_desc": "This is not necessary to use this wallet, as no tokens can be transferred until after the ICO. KYC is for sending tokens after the ICO and does not affect the functionality of this wallet.",
+
+    "your_wallet_address": "YOUR WALLET ADDRESS",
+
+    "sell_tokens": "SELL TOKENS",
+    "sell_tokens_desc": "Not Available Untill After The ICO.",
+
+    "buy_tokens": "BUY SMARTVOUCHER TOKEN WITH ETH",
+    "choose_amount": "Choose Amount of Token(s) you want to buy",
+    "equivalent_fund": "Equivalent Fund",
+    "buy_now": "BUY NOW",
+    "buy_desc1": "It may take a few minutes for your ETH to appear in the wallet, please be patient.",
+    "buy_desc2": "Remember to keep a little ETH in this wallet! During the ICO you will be able to deploy portals and objects into the SmartVoucher system for only the cost of ETH gas!",
+
+    "market_rates": "MARKET RATES",
+    "market_rates_desc": "Not Available Untill After The ICO.",
+
+    "eth_market_rates": "ETH MARKET RATES",
+    "price_usd": "Price USD",
+    "price_btc": "Price BTC",
+
+    "import_wallet": "Import Wallet",
+    "mnemonic_phrase_here": "Mnemonic Phrase here",
+    "mnemonic_phrase_invalid": "Mnemonic Phrase is invalid",
+    "ok": "OK",
+    "cancel": "Cancel",
+
+    "please_wait": "Please wait...",
+    "importing_wallet": "Importing wallet...",
+    "creating_wallet": "Creating wallet...",
+    "topup_balance": "Topup your balance!",
+
+    "are_you_sure": "Are you sure?",
+    "buy_token_confirm_msg": "You want buy TOKENS for $1 ETH?",
+    "yes_buy_it": "Yes, Buy it!",
+    "enter_password": "Enter your password"
+}

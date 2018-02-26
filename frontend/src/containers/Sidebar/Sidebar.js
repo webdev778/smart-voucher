@@ -124,12 +124,24 @@ class Sidebar extends Component {
               onOpenChange={this.onOpenChange}
               className="isoDashboardMenu"
             >
-              <Menu.Item key="authCheck">
-                <Link to={`${url}/authCheck`}>
+
+              <Menu.Item key="wallet">
+                <Link to={`${url}/wallet`}>
                   <span className="isoMenuHolder" style={submenuColor}>
-                    <i className="ion-document" />
+                    <i className="ion-social-bitcoin-outline" />
                     <span className="nav-text">
-                      <IntlMessages id="sidebar.authCheck" />
+                      Wallet
+                    </span>
+                  </span>
+                </Link>
+              </Menu.Item>
+
+              <Menu.Item key="buyToken">
+                <Link to={`${url}/buyToken`}>
+                  <span className="isoMenuHolder" style={submenuColor}>
+                    <i className="ion-bag" />
+                    <span className="nav-text">
+                      Buy eVoucher
                     </span>
                   </span>
                 </Link>

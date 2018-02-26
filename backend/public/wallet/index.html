@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SmartVoucher Token Wallet</title>
+  <meta name="keywords" content="SmartVoucher">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="SmartVoucher Token Wallet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mystyle.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans|Source+Sans+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.css">
+
+</head>
+
+<body>
+
+  <!-- Page Wrap -->
+  <div class="page" id="top">
+
+    <section id="step1" class="wallet mt-30 mb-30" style='display:none'>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+            <img class="wow fadeInLeft" src="images/icon/msg.png">
+          </div>
+          <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+            <h4 data-i18n="title" class="clr4 fnt-bld txt-upr">Title</h4>
+            <p class="usage-step">Usage Step</p>
+          </div>
+        </div>
+
+        <div class="row wallet-frm">
+          <div class="col-xs-12">
+            <form id="form_register" class="form-horizontal">
+              <div class="form-content">
+
+                <div class="form-group">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <input data-i18n="[placeholder]enter_name" class="form-control" id="name" type="text" required>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <input data-i18n="[placeholder]enter_email" class="form-control" id="email" type="email" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <input data-i18n="[placeholder]create_password" class="form-control" id="password" type="password" required>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <input data-i18n="[placeholder]confirm_password" class="form-control" id="confirm_password" type="password" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <p data-i18n="password_desc">Password Desc</p>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="checkbox">
+                      <label for="checkbox_agree_tos">
+                        <input type="checkbox" name="checkboxes" id="checkbox_agree_tos" required>
+                        <span id="span_agree_tos">Agree to TOS</span>
+                      </label>
+                      <button data-i18n="continue" id="btn_continue_step1" type="submit" class="bg-clr1 orange_btn button-normal" href="#">Continue</button>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <span data-i18n="import_key" id="link_import_key" onclick="importkey();" class="clr4" style="font-size: 25px; font-weight: 400; cursor: pointer;">Import Key</sapn>
+                    </div>
+                  </div>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="step2" class="wallet mt-30 mb-30" style='display:none'>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+            <img class="wow fadeInLeft" src="images/icon/msg.png">
+          </div>
+          <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+            <h4 data-i18n="title" class="clr4 fnt-bld txt-upr">Title</h4>
+            <p class="usage-step">Usage Step</p>
+          </div>
+        </div>
+        <div class="row wallet-frm">
+          <div class="col-xs-12">
+            <div class="step2 p-20 mb-30">
+              <div>
+                <p id="mnemonic_phase_desc">Mnemonic Phase Desc</p>
+              </div>
+              <form class="form-horizontal">
+                <div class="form-content">
+
+                  <div class="form-group">
+                    <div class="col-md-7 col-lg-7 col-sm-12">
+                      <input class="form-control" onclick="this.focus();this.select()" id="d12keys" type="text" readonly>
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-12">
+                      <div class="checkbox">
+                        <label for="check_save_key">
+                          <input type="checkbox" name="checkboxes" id="check_save_key" required><sapn data-i18n="understand">I Understand</sapn>
+                        </label>
+                        <button id="button_download_key" class="bg-clr1 orange_btn button-normal"><span data-i18n="download_keys">Download Keys</span>
+                          <span>
+                            <img style="height: 15px;" src="images/icon/right-icon.png">
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="step3" class="wallet mt-30 mb-30" style='display:none'>
+      <div class="container step3">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+            <img class="wow fadeInLeft" src="images/icon/msg.png">
+          </div>
+          <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+            <h4 data-i18n="title" class="clr4 fnt-bld txt-upr">Title</h4>
+            <p class="usage-step">Usage Step</p>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div>
+            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-4">
+              <div class="step3-left white-bg">
+                <div class="step3-bdr mb-20">
+                  <h5 data-i18n="wallet" class="dspl-in-blc clr4 fnt-bld txt-upr ml-10" style="line-height: normal;">Wallet</h5>
+                  <ol class="f-rght breadcrumb m-0 pt-0 pb-0">
+                    <li>
+                      <a data-i18n="export_keys" id="link_export_key" class="white" href="#">Export Keys</a>
+                    </li>
+                    <li>
+                      <a data-i18n="exit" id="link_exit" class="white" href="#">Exit</a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="clear pos-rel">
+                  <a data-i18n="refresh" href="#" onclick='window.location.reload()' class="pos-abs m-10 clr5" style="right: 0; bottom: 0;">Refresh</a>
+                  <h2 class="m-0 ml-10 clr4">
+                    <b>
+                      <span id="balance_tokens">0.00</span> SVT</b>
+                  </h2>
+                  <h2 class="m-0 ml-10 clr4">
+                    <b>
+                      <span id="balance_eth">0.00</span> ETH</b>
+                  </h2>
+                </div>
+                <div class="step3-pay">
+                  <script>
+                    function shapeshift_click(a, e) {
+                      e.preventDefault();
+                      var link = 'https://shapeshift.io/shifty.html?destination=' + openkey + '&amount=10&output=ETH';
+                      window.open(link, '1418115287605',
+                        'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0'
+                      );
+                      return false;
+                    }
+                  </script>
+
+                  <a onclick="shapeshift_click(this, event);" href="#">
+                    <img src="images/xs_light_ss.png" class="ss-button">
+                  </a>
+                  <p id="deposit_desc"></p>
+                </div>
+              </div>
+
+              <div class="step3-left-btm white-bg">
+                <div class="step3-bdr mb-20">
+                  <h5 data-i18n="send_tokens" class=" clr4 fnt-bld txt-upr ml-10 m-0">SEND TOKENS</h5>
+                </div>
+                <a data-i18n="fill_kyc" href="https://worldbit.com/kyc" target="_blank" class="clr5 m-10 pt-20">Please fill out KYC info to enable Send button.</a>
+                <p class="m-10 clr4" style="display: none">
+                  <i data-i18n="fill_kyc_desc">This is not necessary to use this wallet, as no tokens can be transferred until after the ICO. KYC is for
+                    sending tokens after the ICO and does not affect the functionality of this wallet.</i>
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-4">
+              <div class="step3-mid white-bg">
+                <div class="step3-bdr mb-20">
+                  <h5 data-i18n="your_wallet_address" class=" clr4 fnt-bld txt-upr ml-10 m-0">Your Wallet Address</h5>
+                </div>
+                <div class="p-10 cntr" style="background: #f1f4f7;">
+                  <p id="openkey" class="m-0 clr4 text-center">0x</p>
+                </div>
+                <div class="text-center mt-50 mb-50">
+                  <img id='ethqr' src='' width="180px" height="180px">
+                </div>
+              </div>
+
+              <div class="step3-mid-btm white-bg">
+                <div class="step3-bdr mb-20">
+                  <h5 data-i18n="sell_tokens" class=" clr4 fnt-bld txt-upr ml-10 m-0">SELL TOKENS</h5>
+                </div>
+
+                <h2 class="clr4 fnt-bld ml-10 m-0">1 SVT =
+                  <span id="token_price"></span> USD</h2>
+                <p class="ml-10 clr4" style="display: none">
+                  <i data-i18n="sell_tokens_desc">Not Available Untill After The ICO.</i>
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-4">
+              <div class="step3-right white-bg">
+                <div class="step3-bdr mb-20">
+                  <h5 data-i18n="buy_tokens" class=" clr4 fnt-bld txt-upr ml-10 m-0">BUY SMARTVOUCHER TOKEN WITH ETH</h5>
+                </div>
+
+                <p data-i18n="choose_amount" class="m-0 ml-10 clr4">Choose Amount of Token(s) you want to buy</p>
+
+                <div class="range m-20">
+                  <input type="range" id="range_amount" min="1" step="1" max="250000" value="5000">
+                </div>
+                <div class="text-center mt-20 mb-20">
+                  <table class="mt-10 mb-10 clr5">
+                    <tr>
+                      <th class="f-lft ml-10">
+                        <input type="number" id="amount" min="1" style="width: 60%" value="5000">
+                      </th>
+                      <th class="f-rght mr-10">SVT</th>
+                    </tr>
+                  </table>
+
+                  <p data-i18n="equivalent_fund" class="ml-10 m-0 clr4">Equivalent Fund</p>
+
+                  <table class="mt-20 mb-20 clr4">
+
+                    <tr>
+                      <th class="f-lft ml-10">
+                        <span id="ethfor100hmq">...</span>
+                      </th>
+                      <th class="f-rght mr-10">ETH</th>
+                    </tr>
+                  </table>
+
+                  <table class="mt-20 mb-20 clr4">
+
+                    <tr>
+                      <th class="f-lft ml-10">
+                        <span id="btcfor100hmq">...</span>
+                      </th>
+                      <th class="f-rght mr-10">BTC</th>
+                    </tr>
+                  </table>
+
+                  <table class="mt-20 mb-20 clr4">
+
+                    <tr>
+                      <th class="f-lft ml-10">
+                        <span id="usdfor100hmq">...</span>
+                      </th>
+                      <th class="f-rght mr-10">USD</th>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="text-center">
+                  <button id='try2buybtn' class="bg-clr5 white" type="button"><span data-i18n="buy_now">BUY NOW</span>
+                    <span>
+                      <img src="images/icon/right-icon.png">
+                    </span>
+                  </button>
+                  <p id="consolebuy" class="console"></p>
+                </div>
+                <div class="mt-20" style="display: none">
+                  <p data-i18n="buy_desc1" class="m-10">It may take a few minutes for your ETH to appear in the wallet, please be patient.</p>
+                  <p data-i18n="buy_desc2" class="m-10">Remember to keep a little ETH in this wallet! During the ICO you will be able to deploy portals and objects
+                    into the SmartVoucher system for only the cost of ETH gas!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="step3-btm white-bg">
+              <div class="step3-bdr mb-20">
+                <h5 data-i18n="market_rates" class=" clr4 fnt-bld txt-upr ml-10 m-0">MARKET RATES</h5>
+              </div>
+              <p class="ml-10 clr4" style="display: none">
+                <i data-i18n="market_rates_desc"> </i>
+              </p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="step3-btm white-bg">
+              <div class="step3-bdr mb-20">
+                <h5 data-i18n="eth_market_rates" class=" clr4 fnt-bld txt-upr ml-10 m-0">ETH MARKET RATES</h5>
+              </div>
+
+              <p class="ml-10 clr4">
+                <b data-i18n="price_usd">Price USD:</b>
+                <span id="price_usd">...</span>
+                <b data-i18n="price_btc">Price BTC:</b>
+                <span id="price_btc">...</span>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    </div>
+    <!-- End Page Wrap -->
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/lightwallet.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="js/erc20dashboard.js?v=23"></script>
+
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n/src/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="js/i18n.js"></script>
+
+    <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+
+    <script>
+      var tokens_for_one_eth = 290;
+      var tokenPrice = 1 / tokens_for_one_eth;
+      tokenPrice = tokenPrice.toFixed(5);
+
+      tokenPrice = 1 // 1SVT = 1USD
+      $("#token_price").html(tokenPrice);
+      // extrahook = function () {
+      // 	if ($("#skoko").val() > 0) {
+      // 		$(".sellnow").show();
+
+      // 		$(".hnew").html(Math.round(sellPrice / 1000000000000000000 * $("#skoko").val() * 1000000) / 1000000 + " ETH");
+
+      // 	}
+      // }
+      // disable sell token function now.
+      // extrahook();
+      recalc();
+
+      $.get(option_etherscan_api + "/api?module=stats&action=ethprice&apikey=" + option_etherscan_api_key, function (d) {
+        console.log(d);
+        // $("#market_cap_usd").html(d.result.ethusd + " USD");
+        $("#price_btc").html(d.result.ethbtc);
+        $("#price_usd").html(d.result.ethusd);
+        recalc();
+      }, "json");
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        build_state();
+        rebalance();
+        setInterval(rebalance, 10000);
+      });
+    </script>
+</body>
+
+</html>

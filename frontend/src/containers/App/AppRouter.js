@@ -17,6 +17,18 @@ class AppRouter extends React.Component {
           path={`${url}/authCheck`}
           component={asyncComponent(() => import('../AuthCheck'))}
         />
+        <Route
+          exact
+          path={`${url}/wallet`}
+          component={asyncComponent(() => import('../wallet'))}
+        />
+
+        <Route
+          exact
+          path={`${url}/buyToken`}
+          component={asyncComponent(() => import('../BuyToken'))}
+        />
+
       </Switch>
     );
   }
